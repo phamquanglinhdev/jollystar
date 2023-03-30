@@ -1,6 +1,6 @@
 @php
     $invoice = $user->CurrentInvoice();
-    if($invoice){
+    if(isset($invoice->id)){
         $logs = $invoice->Grade()->first()->Logs()->get();
     }
 @endphp
@@ -19,32 +19,34 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($logs as $log)
-                <tr class="text-center">
-                    <td class="text-center">{{$log->no}}</td>
-                    <td>{{\Carbon\Carbon::parse($log->date)->isoFormat("DD-MM-YYYY")}}</td>
-                    <td>{{$log->lesson}}</td>
-                    <td>{{$log->Teacher->name}}</td>
-                    <td class="text-center">
-                        @if($log->isPresent($user->id))
-                            <img
-                                src="{{asset("images/check.ico")}}"
-                                style="width: 2em;height: 2em">
-                        @else
-                            <img
-                                src="{{asset("images/cancel.png")}}"
-                                style="width: 2em;height: 2em">
-                        @endif
-                    </td>
-                    <td class="text-left">
-                        @foreach($log->students as  $student)
-                            @if($student["name"]==$user->name)
-                                {{$student["comment"]}}
+            @if(isset($invoice->id))
+                @foreach($logs as $log)
+                    <tr class="text-center">
+                        <td class="text-center">{{$log->no}}</td>
+                        <td>{{\Carbon\Carbon::parse($log->date)->isoFormat("DD-MM-YYYY")}}</td>
+                        <td>{{$log->lesson}}</td>
+                        <td>{{$log->Teacher->name}}</td>
+                        <td class="text-center">
+                            @if($log->isPresent($user->id))
+                                <img
+                                    src="{{asset("images/check.ico")}}"
+                                    style="width: 2em;height: 2em">
+                            @else
+                                <img
+                                    src="{{asset("images/cancel.png")}}"
+                                    style="width: 2em;height: 2em">
                             @endif
-                        @endforeach
-                    </td>
-                </tr>
-            @endforeach
+                        </td>
+                        <td class="text-left">
+                            @foreach($log->students as  $student)
+                                @if($student["name"]==$user->name)
+                                    {{$student["comment"]}}
+                                @endif
+                            @endforeach
+                        </td>
+                    </tr>
+                @endforeach
+            @endif
             </tbody>
             <tfoot>
             <tr class="text-center">

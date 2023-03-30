@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\TaskController;
+use App\Http\Controllers\SuperAdminController;
 use Illuminate\Support\Facades\Route;
 
 // --------------------------
@@ -53,5 +54,6 @@ Route::group([
     });
 
     Route::crud('conversation', 'ConversationCrudController');
+    Route::get("super/switch", [SuperAdminController::class, "switchBranch"])->name("super.switch");
 
 }); // this should be the absolute last line of this file

@@ -28,7 +28,7 @@ class AdminCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Admin::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/admin');
-        CRUD::setEntityNameStrings('Admin', 'Quản lý Admin');
+        CRUD::setEntityNameStrings('Chi nhánh', 'Quản lý chi nhánh');
     }
 
     /**
@@ -40,9 +40,9 @@ class AdminCrudController extends CrudController
     protected function setupListOperation()
     {
         $this->crud->removeButton("show");
-        CRUD::addColumn(['name' => 'name', 'label' => 'Tên admin']);
+        CRUD::addColumn(['name' => 'name', 'label' => 'Tên tài khoản admin']);
         CRUD::addColumn(['name' => 'email', 'label' => 'Email']);
-        CRUD::addColumn(['name' => 'origin', 'label' => 'Mã nhánh']);
+        CRUD::addColumn(['name' => 'origin', 'label' => 'Mã chi nhánh']);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

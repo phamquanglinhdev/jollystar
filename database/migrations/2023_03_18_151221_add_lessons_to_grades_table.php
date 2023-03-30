@@ -25,8 +25,7 @@ return new class extends Migration {
     public function down()
     {
         Schema::table('grades', function (Blueprint $table) {
-            $table->dropColumn("lessson");
-            $table->string("origin")->default("bizsoft");
+            $table->dropColumn("lessons");
         });
     }
 };

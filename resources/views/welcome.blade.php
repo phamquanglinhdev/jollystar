@@ -1,330 +1,372 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Bizsoft - Giải pháp quản lý trung tâm toàn diện</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+@extends("layouts.client")
+@section("content")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.2/sweetalert2.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.2/sweetalert2.min.js"></script>
+    @if ($errors->any())
+        @php
+            $data = "";
+            foreach ($errors->all() as $error){
+                $data .= "<div>$error</div>";
+            }
 
-    <!-- animate css -->
-    <link rel="stylesheet" href="css/animate.min.css">
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- font-awesome -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- google font -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,800' rel='stylesheet'
-          type='text/css'>
-
-    <!-- custom css -->
-    <link rel="stylesheet" href="css/templatemo-style.css">
-
-</head>
-<body>
-<!-- start preloader -->
-<div class="preloader">
-    <div class="sk-spinner sk-spinner-rotating-plane"></div>
-</div>
-<!-- end preloader -->
-<!-- start navigation -->
-<nav class="navbar navbar-default navbar-fixed-top templatemo-nav" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon icon-bar"></span>
-                <span class="icon icon-bar"></span>
-                <span class="icon icon-bar"></span>
-            </button>
-            <a href="#" class="navbar-brand">BizSoft</a>
+        @endphp
+        <script>
+            Swal.fire({
+                title: 'Thiếu thông tin',
+                html: '{!! $data !!}',
+                icon: 'error',
+                showConfirmButton: false,
+                timer: 1500,
+            })
+        </script>
+        {{--        <div class="alert alert-danger">--}}
+        {{--            <ul>--}}
+        {{--                @foreach ($errors->all() as $error)--}}
+        {{--                    <li>{{ $error }}</li>--}}
+        {{--                @endforeach--}}
+        {{--            </ul>--}}
+        {{--        </div>--}}
+    @endif
+    @if(session("success"))
+        <script>
+            Swal.fire({
+                title: 'Gửi thành công',
+                text: 'Nhân viên JollyStar sẽ sớm liên hệ với bạn',
+                icon: 'success',
+                // confirmButtonText: 'Cool'
+            })
+        </script>
+    @endif
+    <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{$_SERVER["BANNER"]??asset("img/carousel.png")}}"
+                     class="d-block w-75 m-auto" alt="Wild Landscape"/>
+            </div>
         </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right text-uppercase">
-                <li><a href="#home">Trang chủ</a></li>
-                <li><a href="#feature">Tính năng</a></li>
-                <!--						<li><a href="#pricing">Bảng giá</a></li>-->
-                <li><a href="#download">Demo</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
-            </ul>
-        </div>
+        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade"
+                data-mdb-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCrossfade"
+                data-mdb-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-</nav>
-<!-- end navigation -->
-<!-- start home -->
-<section id="home">
-    <div class="overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10 wow fadeIn" data-wow-delay="0.3s">
-                    <h1 class="text-upper">Phần mềm quản lý trung tâm BizSoft</h1>
-                    <p class="tm-white">Tạo phần mềm quản lý trung tâm đa nền tảng , dễ dàng quản lý học sinh, nhân viên
-                        , giáo viên,..</p>
-                    <img src="images/software-img.png" class="img-responsive" alt="home img">
+    <!-- End your project here-->
+    <div class="container my-5">
+        <div class="text-center p-5">
+            <div class="h3">
+                Jolly Star
+            </div>
+            <div class="h4">
+                Chuyên đào tạo tiếng Anh mọi levels
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-12">
+                <img src="{{asset("img/intro-1.jpg")}}" class="card-img-top"
+                     alt="Sunset Over the Sea"/>
+                <div class="card">
+
+                    <div class="card-body text-center">
+                        <div class="h5 card-title text-center my-3 my-lg-4 text-uppercase">
+                            Nhiều khung giờ học trong ngày
+                        </div>
+                        <p class="card-text">
+                            Học sinh có thể chọn lựa lớp khung giờ phù hợp một cách linh hoạt, dễ dàng sắp xếp khung
+                            thời gian để học tập.<br><br>
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-1"></div>
             </div>
-        </div>
-    </div>
-</section>
-<!-- end home -->
-<!-- start divider -->
-<!--		<section id="divider">-->
-<!--			<div class="container">-->
-<!--				<div class="row">-->
-<!--					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">-->
-<!--						<i class="fa fa-laptop"></i>-->
-<!--						<h3 class="text-uppercase">RESPONSIVE LAYOUT</h3>-->
-<!--						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>-->
-<!--					</div>-->
-<!--					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">-->
-<!--						<i class="fa fa-twitter"></i>-->
-<!--						<h3 class="text-uppercase">BOOTSTRAP 3.3.4</h3>-->
-<!--						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>-->
-<!--					</div>-->
-<!--					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">-->
-<!--						<i class="fa fa-font"></i>-->
-<!--						<h3 class="text-uppercase">GOOGLE FONT</h3>-->
-<!--						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</section>-->
-<!-- end divider -->
+            <div class="col-sm-4 col-12">
+                <img src="{{asset("img/intro-2.jpg")}}" class="card-img-top"
+                     alt="Sunset Over the Sea"/>
+                <div class="card">
 
-<!-- start feature -->
-<section class="feature">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.6s">
-                <h2 class="text-uppercase">Quản lý dễ dàng</h2>
-                <p>Thêm sửa xóa tài khoản học viên , giáo viên , nhân viên dễ dàng , giao diện đơn giản đẹp mắt</p>
-                <p><span><i class="fa fa-bell"></i></span>
-                    Tích hợp thông báo Push Notification , dễ dàng quản lý thông báo realtime từ cá nhân đến nhóm
-                </p>
-                <p><span><i class="fa fa-save"></i></span>
-                    Hệ thống phân quyền bảo mật chặt chẽ, backup dữ liệu thường xuyên
-                </p>
-            </div>
-            <div class="col-md-6 wow fadeInRight" data-wow-delay="0.6s">
-                <img src="images/software-img2.png" class="img-responsive" alt="feature img">
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end feature -->
-
-<!-- start feature1 -->
-<section id="feature1">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                <img src="images/software-img3.png" class="img-responsive" alt="feature img">
-            </div>
-            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                <h2 class="text-uppercase">Tính năng độc đáo</h2>
-                <p>Kết hợp cá nhân hóa , API , Webhook vào phần mềm, giúp tương tác liên tục và kịp thời</p>
-                <p><span><i class="fa fa-cloud-upload"></i></span>
-                    Hệ thống quản lý file, đa phương tiện giúp giáo viên , học sinh có thể upload bài tập , tài liệu
-                </p>
-                <p><span><i class="fa fa-connectdevelop"></i></span>
-                    Kết nối các tài khoản xã hội, link zoom, google meet ,dễ dàng truy cập lớp học từ phần mềm
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end feature1 -->
-<section class="feature">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.6s">
-                <h2 class="text-uppercase">Dịch vụ khác</h2>
-                <p><span><i class="fa fa-android"></i></span>
-                    Tư vấn, tạo website, app theo yêu cầu ( Thương mại điện tử, giáo dục, nghệ thuật, ...)
-                </p>
-                <p><span><i class="fa fa-bell"></i></span>
-                    Tích hợp chức năng thông báo cho các ứng dụng ( đến Discord, Slash,...)
-                </p>
-                <p><span><i class="fa fa-video-camera"></i></span>
-                    Tư vấn thiết kế logo, poster, banner truyền thông đa phương tiện nhanh chóng và đẹp mắt
-                </p>
-            </div>
-            <div class="col-md-6 wow fadeInRight" data-wow-delay="0.6s">
-                <img src="images/banner-bo-cuc-website.jpg" class="img-responsive img-rounded" alt="feature img">
-            </div>
-        </div>
-    </div>
-</section>
-<!-- start pricing -->
-<!--		<section id="pricing">-->
-<!--			<div class="container">-->
-<!--				<div class="row">-->
-<!--					<div class="col-md-12 wow bounceIn">-->
-<!--						<h2 class="text-uppercase">Our Pricing</h2>-->
-<!--					</div>-->
-<!--					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">-->
-<!--						<div class="pricing text-uppercase">-->
-<!--							<div class="pricing-title">-->
-<!--								<h4>Basic Plan</h4>-->
-<!--								<p>$11</p>-->
-<!--								<small class="text-lowercase">monthly</small>-->
-<!--							</div>-->
-<!--							<ul>-->
-<!--								<li>6 GB Space</li>-->
-<!--								<li>600 GB Bandwidth</li>-->
-<!--								<li>60 More Themes</li>-->
-<!--								<li>Lifetime Support</li>-->
-<!--							</ul>-->
-<!--							<button class="btn btn-primary text-uppercase">Sign up</button>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">-->
-<!--						<div class="pricing active text-uppercase">-->
-<!--							<div class="pricing-title">-->
-<!--								<h4>Business Plan</h4>-->
-<!--								<p>$22</p>-->
-<!--								<small class="text-lowercase">monthly</small>-->
-<!--							</div>-->
-<!--							<ul>-->
-<!--								<li>15 GB space</li>-->
-<!--								<li>1,500 GB Bandwidth</li>-->
-<!--								<li>150 More Themes</li>-->
-<!--								<li>Lifetime Support</li>-->
-<!--							</ul>-->
-<!--							<button class="btn btn-primary text-uppercase">Sign up</button>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">-->
-<!--						<div class="pricing text-uppercase">-->
-<!--							<div class="pricing-title">-->
-<!--								<h4>Pro Plan</h4>-->
-<!--								<p>$33</p>-->
-<!--								<small class="text-lowercase">monthly</small>-->
-<!--							</div>-->
-<!--							<ul>-->
-<!--								<li>35 GB space</li>-->
-<!--								<li>3,500 GB bandwidth</li>-->
-<!--								<li>350 more themes</li>-->
-<!--								<li>Lifetime Support</li>-->
-<!--							</ul>-->
-<!--							<button class="btn btn-primary text-uppercase">Sign Up</button>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</section>-->
-<!-- end pricing -->
-
-<!-- start download -->
-<section id="download">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-6 wow fadeInRight" data-wow-delay="0.6s">
-                <img src="images/software-img.png" class="img-responsive" alt="feature img">
-            </div>
-            <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.6s">
-                <h2 class="text-uppercase">Sử dụng DEMO của chúng tôi để trải nghiệm các tính năng cơ bản</h2>
-                <p>Trải nghiệm bản demo trên window để biết được các tính năng cơ bản. Liên hệ trực tiếp dễ dàng tùy
-                    chỉnh các chức năng cho phần mềm của chính bạn.</p>
-                <a href="{{backpack_url('/dashboard')}}" class="btn btn-primary text-uppercase"><i class="fa fa-download"></i> Download</a>
-                <a href="#contact" class="btn btn-primary text-uppercase"><i class="fa fa-inbox"></i> Liên hệ</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end download -->
-
-<!-- start contact -->
-<section id="contact">
-    <div class="overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <h2 class="text-uppercase">Liên hệ với chúng tôi</h2>
-                    <p class="text-uppercase h3 font-weight-bold">Công Ty TNHH BIZ </p>
-                    <address>
-                        <p><i class="fa fa-map-marker"></i>Số 9, ngõ 908/36 Kim Giang, thành phố Hà Nội.</p>
-                        <p><i class="fa fa-phone"></i> 0977 281 661 </p>
-                        <p><i class="fa fa-envelope-o"></i> bizenglishforsuccess@gmail.com</p>
-                    </address>
+                    <div class="card-body text-center">
+                        <div class="h5 card-title text-center my-3 my-lg-4">
+                            LỘ TRÌNH CÁ NHÂN HÓA
+                        </div>
+                        <p class="card-text">
+                            Học 1 kèm 1 nên giáo viên có thể hiểu rõ trình độ bạn và dạy bạn theo lộ trình được cá nhân
+                            hóa
+                            phù hợp nhất với bạn – đảm bảo hiệu quả gấp nhiều lần so với đi học tại trung tâm.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="contact-form">
-                        <form action="#" method="post" name="">
-                            <div class="col-md-6">
-                                <input type="text" id="name" class="form-control" placeholder="Họ và tên" required>
-                            </div>
-                            <div class="col-md-6">
+            </div>
+            <div class="col-sm-4 col-12">
+                <img src="{{asset("img/intro-3.jpg")}}" class="card-img-top"
+                     alt="Sunset Over the Sea"/>
+                <div class="card">
 
-                                <input type="tel" id="phone" class="form-control" placeholder="Số điện thoại" required>
+                    <div class="card-body text-center">
+                        <div class="h5 card-title text-center my-3 my-lg-4">
+                            CHI PHÍ THẤP
+                        </div>
+                        <p class="card-text">
+                            Học 1 kèm 1 nhưng chi phí cho mỗi buổi học thấp hơn so với học lớp 10 – 12 người tại trung
+                            tâm.
+                            Đảm bảo bạn có thể học tiếng Anh lâu dài mà không còn lo lắng về vấn đề tài chính.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-primary text-white">
+        <div class="container">
+            <div class="text-center p-5">
+                <div class="h3">
+                    BẠN CÓ THỂ HỌC GÌ VỚI Jolly Star?
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 col-12 mb-4">
+                    <img src="{{asset("img/pad_1.jpg")}}" class="card-img-top rounded"
+                         alt="Sunset Over the Sea"/>
+                </div>
+                <div class="col-sm-3 col-12 mb-4">
+                    <img src="{{asset("img/pad_2.jpg")}}" class="card-img-top rounded"
+                         alt="Sunset Over the Sea"/>
+                </div>
+                <div class="col-sm-3 col-12 mb-4">
+                    <img src="{{asset("img/pad_3.jpg")}}" class="card-img-top rounded"
+                         alt="Sunset Over the Sea"/>
+                </div>
+                <div class="col-sm-3 col-12 mb-4">
+                    <img src="{{asset("img/pad_4.jpg")}}" class="card-img-top rounded"
+                         alt="Sunset Over the Sea"/>
+                </div>
+            </div>
+            <div class="text-center p-3 pb-5">
+                <button class="btn btn-primary">
+                    Xem chi tiết các khóa học
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="bg-primary text-white pb-5">
+        <div class="text-center p-lg-5 p-2">
+            <div class="h3">ĐÀO TẠO TIẾNG ANH CHO DOANH NGHIỆP</div>
+        </div>
+        <div class="container">
+            <div class="row py-5 align-items-center" style="border: 2px white dashed">
+                <div class="col-md-5 col-12">
+                    <div class="h5">
+                        Jolly Star đào tạo tiếng Anh Online cho nhân viên các doanh nghiệp theo yêu cầu.
+                    </div>
+                    <hr>
+                    <ul>
+                        <li>Chương trình học được thiết kế riêng theo yêu cầu của từng doanh nghiệp.</li>
+                        <li>Nâng cao hiệu quả học tập</li>
+                        <li>Tiết kiệm chi phí lên tới 50% – 70%.</li>
+                    </ul>
+                </div>
+                <div class="col-md-7 col-12 w-50 m-auto d-lg-block d-none">
+                    <img src="https://files.catbox.moe/gvnv74.jpg" class="w-100 rounded shadow-lg"/>
+                </div>
+                <div class="col-md-7 col-12 w-100 m-auto d-lg-none d-block">
+                    <img src="https://files.catbox.moe/gvnv74.jpg" class="w-100 rounded shadow-lg"/>
+                </div>
+            </div>
+        </div>
+    </div>
+{{--    <div class="">--}}
+{{--        <div class="text-center p-5">--}}
+{{--            <div class="h3 pb-5">GIÁO VIÊN CỦA CHÚNG TÔI</div>--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-6">--}}
+{{--                        <div class="card">--}}
+{{--                            <div class="ratio ratio-16x9 rounded">--}}
+{{--                                <iframe--}}
+{{--                                    class="rounded"--}}
+{{--                                    src="https://www.youtube.com/embed/{{json_decode($_SERVER["LEFT_VIDEO"])->id??""}}"--}}
+{{--                                    title="YouTube video"--}}
+{{--                                    allowfullscreen--}}
+{{--                                ></iframe>--}}
+{{--                            </div>--}}
+{{--                            <div class="card-body px-5">--}}
+{{--                                <div class="h5 text-primary">GIÁO VIÊN VIỆT NAM</div>--}}
+{{--                                <p class="card-text">Giáo viên Việt Nam với chứng chỉ IELTS 6.5 – 8.0 hoặc du học sinh--}}
+{{--                                    tại--}}
+{{--                                    Mỹ - Châu Âu.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-6">--}}
+{{--                        <div class="card">--}}
+{{--                            <div class="ratio ratio-16x9 rounded">--}}
+{{--                                <iframe--}}
+{{--                                    class="rounded"--}}
+{{--                                    src="https://www.youtube.com/embed/{{json_decode($_SERVER["RIGHT_VIDEO"])->id??""}}"--}}
+{{--                                    title="YouTube video"--}}
+{{--                                    allowfullscreen--}}
+{{--                                ></iframe>--}}
+{{--                            </div>--}}
+{{--                            <div class="card-body px-5">--}}
+{{--                                <div class="h5 text-primary">GIÁO VIÊN PHILIPPINES</div>--}}
+{{--                                <p class="card-text">Giáo viên Philippines nổi tiếng là những người chuyên dạy tiếng Anh--}}
+{{--                                    cho--}}
+{{--                                    trẻ em trên toàn thế giới.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+    <div class="py-2">
+        <div class="text-center p-5">
+            <h3>HỌC VIÊN CỦA CHÚNG TÔI NÓI GÌ ?</h3>
+        </div>
+        <div class="container">
+            <div class="owl-carousel py-5">
+                @if($reviews!=null)
+                    @foreach($reviews as $review)
+                        <div class=" p-2 reviews">
+                            <img src="{{$review->avatar}}"
+                                 class="card-img-top rounded-circle w-50 m-auto" alt="Sunset Over the Sea"/>
+                            <div class="text-warning text-center mt-2">
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
                             </div>
-                            <div class="col-md-12">
-                                <input type="email" id="email" class="form-control" placeholder="Email" required>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    {{$review->review_content}}
+                                </p>
+                                <div class="h5">- {{$review->name}} -</div>
                             </div>
-                            <div class="col-md-12">
-                                <input type="text" id="title" class="form-control" placeholder="Tiêu đề" required>
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+        </div>
+    </div>
+{{--    <div class="py-2 container">--}}
+{{--        <div class="text-center pb-5 text-uppercase">--}}
+{{--            <h3>Chứng chỉ của học viên</h3>--}}
+{{--        </div>--}}
+{{--        <div class="owl-carousel">--}}
+{{--            @php--}}
+{{--                $certificates  = \App\Models\Certificate::limit(10)->get();--}}
+{{--            @endphp--}}
+{{--            @foreach($certificates as $certificate)--}}
+{{--                <div class="bg-image bg-dark rounded">--}}
+{{--                    <img src="{{$certificate->image}}" class="w-100 bgd rounded">--}}
+{{--                    <div class="middle text-white">--}}
+{{--                        <div class="text">{{$certificate->name}}</div>--}}
+{{--                        <div class="text">{{$certificate->certificate_name}}</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            @endforeach--}}
+{{--        </div>--}}
+{{--    </div>--}}
+    <div class="bg-primary" id="lien-he">
+        <div class="container">
+            <div class="row my-5 py-5">
+                <div class="col-md-6 bg-white d-none d-lg-block rounded-start">
+                    <div class="my-5">
+                        <img src="https://files.catbox.moe/ji9qzc.png" class="w-100">
+                    </div>
+                </div>
+                <div class="col-md-6 bg-white rounded-end">
+                    <div class=" my-5 p-3 pt-4 rounded">
+                        <form action="{{route("contact.save")}}" method="post">
+                            @csrf
+                            <div class="p-2 h4 mb-5 text-center text-primary">Chia sẻ nhu cầu học tập của bạn</div>
+                            <!-- Name input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="name" name="name" class="form-control"/>
+                                <label class="form-label" for="name">Tên của bạn</label>
                             </div>
-                            <div class="col-md-12">
-                                <textarea id="message" class="form-control" placeholder="Lời nhắn" rows="5"></textarea>
+
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <input type="email" id="email" name="email" class="form-control"/>
+                                <label class="form-label" for="email">Địa chỉ email</label>
                             </div>
-                            <div class="col-md-12">
-                                <input type="button" class="form-control text-uppercase" id="send" value="Gửi"
-                                       onclick="contact()">
+                            <div class="form-outline mb-4">
+                                <input type="tel" id="phone" name="phone" class="form-control"/>
+                                <label class="form-label" for="phone">Số điện thoại</label>
                             </div>
+                            <!-- Message input -->
+                            <div class="form-outline mb-4">
+                                <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                                <label class="form-label" for="message">Nhu cầu học tập của bạn</label>
+                            </div>
+
+                            <!-- Checkbox -->
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-4">Gửi ngay</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<!-- end contact -->
+@endsection
+@section("after_scripts")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            mergeFit: true
+                        },
+                        600: {
+                            items: 2,
+                            mergeFit: true
+                        },
+                        1000: {
+                            items: 4,
+                            mergeFit: true
+                        },
 
-<!-- start footer -->
-<footer class="bg-dark">
-    <div class="container">
-        <div class="row">
-            <p>Copyright © 2023 Bizsoft</p>
-        </div>
-    </div>
-</footer>
-<!-- end footer -->
-
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/jquery.singlePageNav.min.js"></script>
-<script src="js/custom.js"></script>
-<script>
-    function contact() {
-        let name = $("#name").val()
-        let email = $("#email").val()
-        let title = $("#title").val()
-        let message = $("#message").val()
-        let phone = $("#phone").val()
-        const request = new XMLHttpRequest();
-        request.open("POST", "https://discord.com/api/webhooks/1071403082338017402/oGc0RYwqDj3oBTIWTtClvnp_ajXNsb1JCJwkofxncSyXHpfmfqkIagUFSuOvJzWqyHby");
-        request.setRequestHeader('Content-type', 'application/json');
-        const params = {
-            username: name,
-            avatar_url: "https://yt3.googleusercontent.com/ytc/AL5GRJVUEt6OoHKgMcy7B_p9rBu57bC5MNM6CsL_QtF_AA=s900-c-k-c0x00ffffff-no-rj",
-            content: "Tiêu đề:" + title +
-                "\n" + message +
-                "\n" + "Email:" + email +
-                "\n" + "Số điện thoại:" + phone,
+                    },
+                    autoHeight: true,
+                    autoplay: true,
+                    autoplayTimeout: 2000,
+                    autoplayHoverPause: true
+                }
+            );
+        });
+    </script>
+    <style>
+        .bg-image{
+            cursor: pointer;
         }
-        request.send(JSON.stringify(params));
-        setTimeout(() => {
-            $("#send").val("Đã gửi")
-        }, 1000)
-        setTimeout(()=>{
-            window.location.reload()
-        },3000)
+        .middle {
+            width: 100%;
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            text-align: center;
 
-    }
-</script>
-</body>
-</html>
+        }
+        .bgd{
+            transition: .5s ease;
+        }
+        .bg-image:hover .bgd{
+            opacity: 0.05;
+        }
+        .bg-image:hover .middle{
+            opacity: 1;
+        }
+    </style>
+@endsection

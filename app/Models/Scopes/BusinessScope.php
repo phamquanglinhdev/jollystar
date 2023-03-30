@@ -24,7 +24,7 @@ class BusinessScope implements Scope
      */
     public function apply(Builder $builder, Model $model)
     {
-        $origin = Cookie::get("origin") ?? "bizsoft";
+        $origin = Cookie::get("origin") ?? "1";
         $builder->where("origin", $origin);
     }
 }
