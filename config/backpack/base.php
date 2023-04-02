@@ -28,7 +28,7 @@ return [
     // ----
 
     // Project name. Shown in the window title.
-    'project_name' => 'Backpack Admin Panel',
+    'project_name' => 'Jolly Star Education',
 
     // When clicking on the admin panel's top-left logo/name,
     // where should the user be redirected?
@@ -89,7 +89,7 @@ return [
     // ------
 
     // Menu logo. You can replace this with an <img> tag if you have a logo.
-    'project_logo' => '<b>Biz</b>Soft',
+    'project_logo' => '<b>Jolly</b>star',
 
     // Show / hide breadcrumbs on admin panel pages.
     'breadcrumbs' => true,

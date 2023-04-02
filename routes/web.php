@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect("/admin");
 });
 Route::get("/facebook/login", [SocialLoginController::class, "facebookLogin"])->name("facebook-login");
 Route::get("/facebook/callback", [SocialLoginController::class, "facebookCallback"])->name("facebook-callback");
@@ -31,9 +31,9 @@ Route::get("/google/callback", [SocialLoginController::class, "googleCallback"])
 Route::get("/github/login", [SocialLoginController::class, "githubLogin"])->name("github-login");
 Route::get("/github/callback", [SocialLoginController::class, "githubCallback"])->name("github-callback");
 Route::get("/test/download/{url}", [DownloadController::class, "download", "url"])->name("download");
-Route::get('/', function () {
-    return view('welcome', ['reviews' => null]);
-});
+//Route::get('/', function () {
+//    return view('welcome', ['reviews' => null]);
+//});
 Route::get("/danh-sach-khoa-hoc", [CourseController::class, "index"])->name("courses");
 Route::get("/khoa-hoc/{slug?}", [CourseController::class, "show", "slug"])->name("course");
 Route::any("/tat-ca-giao-vien", [TeacherController::class, "index"])->name("teachers");
