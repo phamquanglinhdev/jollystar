@@ -1,26 +1,28 @@
 {{-- This file is used to store topbar (left) items--}}
 
 <li class="nav-item px-3"><a class="nav-link" href="#">Xin chào, {{backpack_user()->name}}</a></li>
+<li class="nav-item px-3"><a class="nav-link" href="#">Mã chi nhánh : {{backpack_user()->origin}}</a></li>
 
-@if(backpack_user()->id==1)
+@if(backpack_user()->role=="super")
     <li class="nav-item px-3"><a class="nav-link" href="#">Phân quyền:Super Admin
-            <small class="text-danger">Khi thêm dữ liệu cần lưu ý chi nhánh hiện tại (chi nhánh {{backpack_user()->origin}})</small>
+            <small class="text-danger">Khi thêm dữ liệu cần lưu ý chi nhánh hiện tại (chi
+                nhánh {{backpack_user()->origin}})</small>
         </a></li>
     <form action="{{route("super.switch")}}">
         @csrf
         @php
-            $admin = \App\Models\Admin::all();
+            $branches = \App\Models\Branch::all();
         @endphp
         <div class="input-group">
             <select name='origin' class="form-control">
-                <option>-</option>
-                @foreach($admin as $branch)
-                    <option value="{{$branch->origin}}"
-                            @if(backpack_user()->origin==$branch->origin)
+                <option disabled>-</option>
+                @foreach($branches as $branch)
+                    <option value="{{$branch->code}}"
+                            @if(\Illuminate\Support\Facades\Cookie::get("origin")==$branch->code)
                                 selected
                         @endif
                     >
-                        Chi nhánh {{$branch->origin}}
+                        {{$branch->name}}
                     </option>
                 @endforeach
             </select>

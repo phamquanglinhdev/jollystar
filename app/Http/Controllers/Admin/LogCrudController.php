@@ -235,7 +235,7 @@ class LogCrudController extends CrudController
 
             }
         } else {
-            if (backpack_user()->role != "admin") {
+            if (backpack_user()->role != "admin" && backpack_user()->role!="super") {
                 CRUD::addField([
                     'name' => 'grade_id',
                     'type' => 'select2',

@@ -19,13 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(GradesTableSeeder::class);
         $this->call(LogsTableSeeder::class);
         $this->call(PostsTableSeeder::class);
-        $this->call(FailedJobsTableSeeder::class);
-        $this->call(PasswordResetsTableSeeder::class);
-        $this->call(PersonalAccessTokensTableSeeder::class);
-        $this->call(StaffGradeTableSeeder::class);
-        $this->call(StudentGradeTableSeeder::class);
-        $this->call(TeacherGradeTableSeeder::class);
-        $this->call(CaringsTableSeeder::class);
-        $this->call(SupporterGradeTableSeeder::class);
+        $this->call(BranchesTableSeeder::class);
     }
 }

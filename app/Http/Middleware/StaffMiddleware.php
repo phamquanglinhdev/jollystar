@@ -16,7 +16,7 @@ class StaffMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!in_array(backpack_user()->role,["admin","staff"])) {
+        if (!in_array(backpack_user()->role, ["super", "admin", "staff"])) {
             return redirect(backpack_url("/"));
         }
         return $next($request);

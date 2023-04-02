@@ -3,14 +3,15 @@
             class="la la-home nav-icon"></i> {{ trans('backpack::base.dashboard') }}</a></li>
 
 @if(backpack_user()->role=="super")
-    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('admin') }}"><i
-                class="nav-icon la la-assistive-listening-systems"></i> Admins</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('branch') }}"><i class="nav-icon la la-building"></i>
+            Chi nhánh</a></li>
 @endif
+
 @if(in_array(backpack_user()->role,["admin","super","staff"]))
     <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-group"></i> Người dùng</a>
         <ul class="nav-dropdown-items">
-            @if(backpack_user()->role=="admin")
+            @if(in_array(backpack_user()->role,["admin","super"]))
                 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('staff') }}"><i
                             class="nav-icon la la-user-astronaut"></i> Nhân
                         viên</a></li>
@@ -88,10 +89,10 @@
     </li>
 @endif
 
-@if(backpack_user()->role=="super")
-    <li class='nav-item'><a class='nav-link' href='{{ backpack_url('backup') }}'><i class='nav-icon la la-hdd-o'></i>
-            Backups</a></li>
-@endif
+{{--@if(backpack_user()->role=="super")--}}
+{{--    <li class='nav-item'><a class='nav-link' href='{{ backpack_url('backup') }}'><i class='nav-icon la la-hdd-o'></i>--}}
+{{--            Backups</a></li>--}}
+{{--@endif--}}
 
 
 
@@ -108,17 +109,18 @@
                     class="nav-icon la la-book"></i> Sách</a></li>
     </ul>
 </li>
-<li class="nav-item nav-dropdown">
-    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon lab la-rocketchat"></i>Trò chuyện</a>
-    <ul class="nav-dropdown-items">
-        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('conversation') }}"><i
-                    class="nav-icon la la-comments"></i>Nhóm chat</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('message') }}"><i
-                    class="nav-icon lab la-rocketchat"></i>Trò chuyện</a>
-        </li>
-    </ul>
-</li>
+{{--<li class="nav-item nav-dropdown">--}}
+{{--    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon lab la-rocketchat"></i>Trò chuyện</a>--}}
+{{--    <ul class="nav-dropdown-items">--}}
+{{--        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('conversation') }}"><i--}}
+{{--                    class="nav-icon la la-comments"></i>Nhóm chat</a></li>--}}
+{{--        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('message') }}"><i--}}
+{{--                    class="nav-icon lab la-rocketchat"></i>Trò chuyện</a>--}}
+{{--        </li>--}}
+{{--    </ul>--}}
+{{--</li>--}}
 @if(in_array(backpack_user()->role,["admin","super","staff"]))
     <li class="nav-item"><a class="nav-link" href="{{ backpack_url('task') }}"><i class="nav-icon la la-tasks"></i>Công
             việc</a></li>
 @endif
+

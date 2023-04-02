@@ -14,13 +14,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
-
         \DB::table('users')->delete();
 
         \DB::table('users')->insert(array(
             0 =>
                 array(
+                    'origin' => 1,
                     'avatar' => 'https://files.catbox.moe/mt8vsg.png',
                     'created_at' => '2023-02-08 05:07:17',
                     'disable' => 0,
@@ -36,7 +35,7 @@ class UsersTableSeeder extends Seeder
                     'password' => '$2y$10$Q6acDsMlCXwg8dpW11O5LOHhUXGSH0keNiAz2Yo8ZNaL7uK1Otm0u',
                     'phone' => NULL,
                     'remember_token' => NULL,
-                    'role' => 'admin',
+                    'role' => 'super',
                     'updated_at' => '2023-02-08 05:07:17',
                 ),
         ));

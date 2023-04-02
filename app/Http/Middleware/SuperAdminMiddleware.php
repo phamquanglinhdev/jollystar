@@ -16,7 +16,7 @@ class SuperAdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (backpack_user()->role != "admin") {
+        if (!in_array(backpack_user()->role, ["admin", "super"])) {
             return redirect(backpack_url("/"));
         }
         return $next($request);
