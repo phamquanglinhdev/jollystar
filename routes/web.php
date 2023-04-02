@@ -24,6 +24,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect("/admin");
 });
+Route::get('/home', function () {
+    return redirect("/admin");
+});
 Route::get("/facebook/login", [SocialLoginController::class, "facebookLogin"])->name("facebook-login");
 Route::get("/facebook/callback", [SocialLoginController::class, "facebookCallback"])->name("facebook-callback");
 Route::get("/google/login", [SocialLoginController::class, "googleLogin"])->name("google-login");
