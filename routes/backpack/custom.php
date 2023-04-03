@@ -57,4 +57,5 @@ Route::group([
     Route::get("super/switch", [SuperAdminController::class, "switchBranch"])->name("super.switch");
 
     Route::crud('branch', 'BranchCrudController');
+    Route::crud('review', 'ReviewCrudController');
 }); // this should be the absolute last line of this file

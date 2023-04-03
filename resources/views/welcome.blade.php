@@ -40,20 +40,10 @@
     <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{$_SERVER["BANNER"]??asset("img/carousel.png")}}"
-                     class="d-block w-75 m-auto" alt="Wild Landscape"/>
+                <img src="{{$_SERVER["BANNER"]??asset("img/JollyStar.png")}}"
+                     class="d-block m-auto w-100" alt="Wild Landscape"/>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade"
-                data-mdb-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCrossfade"
-                data-mdb-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
     <!-- End your project here-->
     <div class="container my-5">
@@ -150,32 +140,32 @@
             </div>
         </div>
     </div>
-    <div class="bg-primary text-white pb-5">
-        <div class="text-center p-lg-5 p-2">
-            <div class="h3">ĐÀO TẠO TIẾNG ANH CHO DOANH NGHIỆP</div>
-        </div>
-        <div class="container">
-            <div class="row py-5 align-items-center" style="border: 2px white dashed">
-                <div class="col-md-5 col-12">
-                    <div class="h5">
-                        Jolly Star đào tạo tiếng Anh Online cho nhân viên các doanh nghiệp theo yêu cầu.
-                    </div>
-                    <hr>
-                    <ul>
-                        <li>Chương trình học được thiết kế riêng theo yêu cầu của từng doanh nghiệp.</li>
-                        <li>Nâng cao hiệu quả học tập</li>
-                        <li>Tiết kiệm chi phí lên tới 50% – 70%.</li>
-                    </ul>
-                </div>
-                <div class="col-md-7 col-12 w-50 m-auto d-lg-block d-none">
-                    <img src="https://files.catbox.moe/gvnv74.jpg" class="w-100 rounded shadow-lg"/>
-                </div>
-                <div class="col-md-7 col-12 w-100 m-auto d-lg-none d-block">
-                    <img src="https://files.catbox.moe/gvnv74.jpg" class="w-100 rounded shadow-lg"/>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="bg-primary text-white pb-5">--}}
+{{--        <div class="text-center p-lg-5 p-2">--}}
+{{--            <div class="h3">ĐÀO TẠO TIẾNG ANH CHO DOANH NGHIỆP</div>--}}
+{{--        </div>--}}
+{{--        <div class="container">--}}
+{{--            <div class="row py-5 align-items-center" style="border: 2px white dashed">--}}
+{{--                <div class="col-md-5 col-12">--}}
+{{--                    <div class="h5">--}}
+{{--                        Jolly Star đào tạo tiếng Anh Online cho nhân viên các doanh nghiệp theo yêu cầu.--}}
+{{--                    </div>--}}
+{{--                    <hr>--}}
+{{--                    <ul>--}}
+{{--                        <li>Chương trình học được thiết kế riêng theo yêu cầu của từng doanh nghiệp.</li>--}}
+{{--                        <li>Nâng cao hiệu quả học tập</li>--}}
+{{--                        <li>Tiết kiệm chi phí lên tới 50% – 70%.</li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-7 col-12 w-50 m-auto d-lg-block d-none">--}}
+{{--                    <img src="https://files.catbox.moe/gvnv74.jpg" class="w-100 rounded shadow-lg"/>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-7 col-12 w-100 m-auto d-lg-none d-block">--}}
+{{--                    <img src="https://files.catbox.moe/gvnv74.jpg" class="w-100 rounded shadow-lg"/>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 {{--    <div class="">--}}
 {{--        <div class="text-center p-5">--}}
 {{--            <div class="h3 pb-5">GIÁO VIÊN CỦA CHÚNG TÔI</div>--}}

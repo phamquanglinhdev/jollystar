@@ -124,3 +124,5 @@
             việc</a></li>
 @endif
 
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('review') }}"><i class="nav-icon la la-question"></i> Reviews</a></li>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>ZE Education</title>
+    <title>Jolly Star</title>
     <!-- MDB icon -->
     <link rel="icon" href="{{asset("img/mdb-favicon.ico")}}" type="image/x-icon"/>
     <!-- Font Awesome -->
@@ -58,24 +58,24 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{url("/")}}">Trang chủ</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{url("/danh-sach-khoa-hoc")}}">Các khóa học</a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link text-white" href="{{url("/danh-sach-khoa-hoc")}}">Các khóa học</a>--}}
+{{--                </li>--}}
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{url("/thu-vien")}}">Thư viện</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{url("/tat-ca-giao-vien")}}">Giáo viên</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{url("/chung-chi")}}">Chứng chỉ</a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link text-white" href="{{url("/tat-ca-giao-vien")}}">Giáo viên</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link text-white" href="{{url("/chung-chi")}}">Chứng chỉ</a>--}}
+{{--                </li>--}}
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{$_SERVER["TRIAL_LINK"]??"#"}}">Đăng ký học thử</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{url("/su-kien")}}">Sự kiện</a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link text-white" href="{{url("/su-kien")}}">Sự kiện</a>--}}
+{{--                </li>--}}
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{$_SERVER["HIRING_PAGE"]??"#"}}">Tuyển dụng</a>
                 </li>
@@ -196,13 +196,17 @@
                 <div class="col-sm-12 col-md-4">
                     <!-- Content -->
                     <h6 class="text-uppercase fw-bold mb-4">
-                        <i class="fas fa-gem me-3 text-secondary"></i>CÔNG TY CỔ PHẦN GIÁO DỤC VÀ ĐÀO TẠO ZE EDUCATION
+                        <i class="fas fa-gem me-3 text-secondary text-uppercase"></i>JollyStar English - Trung tâm đào
+                        tạo Anh ngữ và Kỹ năng
                     </h6>
                     <p>
                         {{$_SERVER["FOOTER_DESCRIPTION"]??""}}
                     </p>
                     <p><i class="fas fa-home me-3 text-secondary"></i>
-                        {{$_SERVER["FOOTER_ADDRESS"]??""}}
+                        {{$_SERVER["FOOTER_ADDRESS"]??"CS1. Khu 5, TT Phố Mới, Thị Xã Quế Võ, tỉnh Bắc Ninh"}}
+                    </p>
+                    <p><i class="fas fa-home me-3 text-secondary"></i>
+                        {{$_SERVER["FOOTER_ADDRESS"]??"CS2. Đông Du, Đào Viên, Quế Võ, Bắc Ninh"}}
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -211,13 +215,13 @@
                 <div class="col-sm-6 col-md-3">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4">
-                        THÔNG TIN ZE EDUCATION
+                        THÔNG TIN Jolly Star
                     </h6>
                     {{--                    <p><a href="#" class="text-reset">Cách thức học</a></p>--}}
                     {{--                    <p><a href="#" class="text-reset">Câu hỏi thường gặp</a></p>--}}
                     <p><a href="#" class="text-reset">Thư viện</a></p>
                     <p><a href="#" class="text-reset">Trở thành giáo viên</a></p>
-                    <p><a href="#" class="text-reset">Trở thành đối tác của ZE Education</a></p>
+                    <p><a href="#" class="text-reset">Trở thành đối tác của Jolly Star</a></p>
                 </div>
                 <!-- Grid column -->
 
@@ -230,12 +234,16 @@
                              data-width="" data-height="" data-small-header="false" data-adapt-container-width="false"
                              data-hide-cover="false" data-show-facepile="true">
                             <blockquote cite="https://www.facebook.com/zeeducation.edu" class="fb-xfbml-parse-ignore"><a
-                                    href="https://www.facebook.com/zeeducation.edu">ZE Education- Gia sư tiếng Anh
+                                    href="https://www.facebook.com/zeeducation.edu">Jolly Star- Gia sư tiếng Anh
                                     1-1</a></blockquote>
                         </div>
                     </div>
-                    <div><i class="fas fa-envelope me-3 text-secondary"></i>{{$_SERVER["MAIN_EMAIL"]??""}}</div>
-                    <div><i class="fas fa-phone me-3 text-secondary"></i> {{$_SERVER["MAIN_PHONE"]??""}}</div>
+                    <div>
+                        <span>{{$_SERVER["MAIN_EMAIL"]??"jollystartenglishcenter2022@gmail.com"}}</span>
+                    </div>
+                    <div>
+                        {{$_SERVER["MAIN_PHONE"]??"0936.281.123 / 0366.758.385"}}
+                    </div>
                     {{--                    <div><i class="fas fa-print me-3 text-secondary"></i> bizenglishforsuccess@gmail.com</div>--}}
                 </div>
                 <!-- Grid column -->
@@ -248,7 +256,7 @@
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
         © 2023 Copyright:
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">ZE EDUCATION</a>
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">JollyStar EDUCATION</a>
     </div>
     <!-- Copyright -->
 </footer>

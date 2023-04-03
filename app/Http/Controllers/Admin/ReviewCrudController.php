@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\BookRequest;
-use App\Models\Bag;
+use App\Http\Requests\ReviewRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class BookCrudController
+ * Class ReviewCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class BookCrudController extends CrudController
+class ReviewCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -27,9 +26,9 @@ class BookCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Book::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/book');
-        CRUD::setEntityNameStrings('book', 'books');
+        CRUD::setModel(\App\Models\Review::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/review');
+        CRUD::setEntityNameStrings('review', 'reviews');
     }
 
     /**
@@ -38,21 +37,21 @@ class BookCrudController extends CrudController
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
      * @return void
      */
-//    protected function setupListOperation()
-//    {
-//        CRUD::column('name');
-//        CRUD::column('bag_id');
-//        CRUD::column('thumbnail');
-//        CRUD::column('url');
+    protected function setupListOperation()
+    {
+        CRUD::column('name')->label("Tên");
+        CRUD::column('avatar')->label("Ảnh đại diện");
+//        CRUD::column('star');
+        CRUD::column('review_content')->label("Nội dung");
 //        CRUD::column('created_at');
 //        CRUD::column('updated_at');
-//
-//        /**
-//         * Columns can be defined using the fluent syntax or array syntax:
-//         * - CRUD::column('price')->type('number');
-//         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
-//         */
-//    }
+
+        /**
+         * Columns can be defined using the fluent syntax or array syntax:
+         * - CRUD::column('price')->type('number');
+         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
+         */
+    }
 
     /**
      * Define what happens when the Create operation is loaded.
@@ -62,20 +61,12 @@ class BookCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(BookRequest::class);
+        CRUD::setValidation(ReviewRequest::class);
 
-        CRUD::addField([
-            'name' => 'bag_id',
-            'type' => 'select2',
-            'model' => 'App\Models\Bag',
-            'entity' => 'Bag',
-            'attribute' => 'name',
-            'label' => 'Danh mục',
-        ]);
-        CRUD::field('name')->label("Tên sách");
-        CRUD::field('description')->label("Mô tả");
-        CRUD::field('thumbnail')->label("Ảnh")->type("image")->crop(true)->aspect_ratio(1907 / 2560);
-        CRUD::field('url');
+        CRUD::field('name')->label("Tên");
+        CRUD::field('avatar')->label("Ảnh đại diện")->type("image")->crop(true)->aspect_ratio(1);
+//        CRUD::column('star');
+        CRUD::field('review_content')->label("Nội dung")->type("textarea");
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -93,10 +84,5 @@ class BookCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
-    }
-
-    protected function index()
-    {
-        return view("bag.list", ["menus" => Bag::where("parent_id", null)->get()]);
     }
 }
