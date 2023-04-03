@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
@@ -230,12 +231,11 @@
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4">THÔNG TIN LIÊN HỆ</h6>
                     <div class="mb-2">
-                        <div class="fb-page" data-href="https://www.facebook.com/zeeducation.edu" data-tabs=""
+                        <div class="fb-page" data-href="https://www.facebook.com/jollystarenglish" data-tabs=""
                              data-width="" data-height="" data-small-header="false" data-adapt-container-width="false"
                              data-hide-cover="false" data-show-facepile="true">
-                            <blockquote cite="https://www.facebook.com/zeeducation.edu" class="fb-xfbml-parse-ignore"><a
-                                    href="https://www.facebook.com/zeeducation.edu">Jolly Star- Gia sư tiếng Anh
-                                    1-1</a></blockquote>
+                            <blockquote cite="https://www.facebook.com/jollystarenglish" class="fb-xfbml-parse-ignore"><a
+                                    href="https://www.facebook.com/jollystarenglish">Jolly Star</a></blockquote>
                         </div>
                     </div>
                     <div>
@@ -270,5 +270,16 @@
 <script src="{{asset("js/notify.min.js")}}" type="text/javascript"></script>
 <!-- Custom scripts -->
 @yield("after_scripts")
+<style>
+    .bg-primary{
+        background: #14a44d!important;
+    }
+    .btn-primary{
+        background: #14a44d!important;
+    }
+    .text-primary{
+        color: #14a44d!important;
+    }
+</style>
 </body>
 </html>
