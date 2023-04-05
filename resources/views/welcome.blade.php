@@ -140,77 +140,77 @@
             </div>
         </div>
     </div>
-{{--    <div class="bg-primary text-white pb-5">--}}
-{{--        <div class="text-center p-lg-5 p-2">--}}
-{{--            <div class="h3">ĐÀO TẠO TIẾNG ANH CHO DOANH NGHIỆP</div>--}}
-{{--        </div>--}}
-{{--        <div class="container">--}}
-{{--            <div class="row py-5 align-items-center" style="border: 2px white dashed">--}}
-{{--                <div class="col-md-5 col-12">--}}
-{{--                    <div class="h5">--}}
-{{--                        Jolly Star đào tạo tiếng Anh Online cho nhân viên các doanh nghiệp theo yêu cầu.--}}
-{{--                    </div>--}}
-{{--                    <hr>--}}
-{{--                    <ul>--}}
-{{--                        <li>Chương trình học được thiết kế riêng theo yêu cầu của từng doanh nghiệp.</li>--}}
-{{--                        <li>Nâng cao hiệu quả học tập</li>--}}
-{{--                        <li>Tiết kiệm chi phí lên tới 50% – 70%.</li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-7 col-12 w-50 m-auto d-lg-block d-none">--}}
-{{--                    <img src="https://files.catbox.moe/gvnv74.jpg" class="w-100 rounded shadow-lg"/>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-7 col-12 w-100 m-auto d-lg-none d-block">--}}
-{{--                    <img src="https://files.catbox.moe/gvnv74.jpg" class="w-100 rounded shadow-lg"/>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <div class="">--}}
-{{--        <div class="text-center p-5">--}}
-{{--            <div class="h3 pb-5">GIÁO VIÊN CỦA CHÚNG TÔI</div>--}}
-{{--            <div class="container">--}}
-{{--                <div class="row">--}}
-{{--                    <div class="col-md-6">--}}
-{{--                        <div class="card">--}}
-{{--                            <div class="ratio ratio-16x9 rounded">--}}
-{{--                                <iframe--}}
-{{--                                    class="rounded"--}}
-{{--                                    src="https://www.youtube.com/embed/{{json_decode($_SERVER["LEFT_VIDEO"])->id??""}}"--}}
-{{--                                    title="YouTube video"--}}
-{{--                                    allowfullscreen--}}
-{{--                                ></iframe>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body px-5">--}}
-{{--                                <div class="h5 text-primary">GIÁO VIÊN VIỆT NAM</div>--}}
-{{--                                <p class="card-text">Giáo viên Việt Nam với chứng chỉ IELTS 6.5 – 8.0 hoặc du học sinh--}}
-{{--                                    tại--}}
-{{--                                    Mỹ - Châu Âu.</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-md-6">--}}
-{{--                        <div class="card">--}}
-{{--                            <div class="ratio ratio-16x9 rounded">--}}
-{{--                                <iframe--}}
-{{--                                    class="rounded"--}}
-{{--                                    src="https://www.youtube.com/embed/{{json_decode($_SERVER["RIGHT_VIDEO"])->id??""}}"--}}
-{{--                                    title="YouTube video"--}}
-{{--                                    allowfullscreen--}}
-{{--                                ></iframe>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body px-5">--}}
-{{--                                <div class="h5 text-primary">GIÁO VIÊN PHILIPPINES</div>--}}
-{{--                                <p class="card-text">Giáo viên Philippines nổi tiếng là những người chuyên dạy tiếng Anh--}}
-{{--                                    cho--}}
-{{--                                    trẻ em trên toàn thế giới.</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    {{--    <div class="bg-primary text-white pb-5">--}}
+    {{--        <div class="text-center p-lg-5 p-2">--}}
+    {{--            <div class="h3">ĐÀO TẠO TIẾNG ANH CHO DOANH NGHIỆP</div>--}}
+    {{--        </div>--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="row py-5 align-items-center" style="border: 2px white dashed">--}}
+    {{--                <div class="col-md-5 col-12">--}}
+    {{--                    <div class="h5">--}}
+    {{--                        Jolly Star đào tạo tiếng Anh Online cho nhân viên các doanh nghiệp theo yêu cầu.--}}
+    {{--                    </div>--}}
+    {{--                    <hr>--}}
+    {{--                    <ul>--}}
+    {{--                        <li>Chương trình học được thiết kế riêng theo yêu cầu của từng doanh nghiệp.</li>--}}
+    {{--                        <li>Nâng cao hiệu quả học tập</li>--}}
+    {{--                        <li>Tiết kiệm chi phí lên tới 50% – 70%.</li>--}}
+    {{--                    </ul>--}}
+    {{--                </div>--}}
+    {{--                <div class="col-md-7 col-12 w-50 m-auto d-lg-block d-none">--}}
+    {{--                    <img src="https://files.catbox.moe/gvnv74.jpg" class="w-100 rounded shadow-lg"/>--}}
+    {{--                </div>--}}
+    {{--                <div class="col-md-7 col-12 w-100 m-auto d-lg-none d-block">--}}
+    {{--                    <img src="https://files.catbox.moe/gvnv74.jpg" class="w-100 rounded shadow-lg"/>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
+    {{--    <div class="">--}}
+    {{--        <div class="text-center p-5">--}}
+    {{--            <div class="h3 pb-5">GIÁO VIÊN CỦA CHÚNG TÔI</div>--}}
+    {{--            <div class="container">--}}
+    {{--                <div class="row">--}}
+    {{--                    <div class="col-md-6">--}}
+    {{--                        <div class="card">--}}
+    {{--                            <div class="ratio ratio-16x9 rounded">--}}
+    {{--                                <iframe--}}
+    {{--                                    class="rounded"--}}
+    {{--                                    src="https://www.youtube.com/embed/{{json_decode($_SERVER["LEFT_VIDEO"])->id??""}}"--}}
+    {{--                                    title="YouTube video"--}}
+    {{--                                    allowfullscreen--}}
+    {{--                                ></iframe>--}}
+    {{--                            </div>--}}
+    {{--                            <div class="card-body px-5">--}}
+    {{--                                <div class="h5 text-primary">GIÁO VIÊN VIỆT NAM</div>--}}
+    {{--                                <p class="card-text">Giáo viên Việt Nam với chứng chỉ IELTS 6.5 – 8.0 hoặc du học sinh--}}
+    {{--                                    tại--}}
+    {{--                                    Mỹ - Châu Âu.</p>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                    <div class="col-md-6">--}}
+    {{--                        <div class="card">--}}
+    {{--                            <div class="ratio ratio-16x9 rounded">--}}
+    {{--                                <iframe--}}
+    {{--                                    class="rounded"--}}
+    {{--                                    src="https://www.youtube.com/embed/{{json_decode($_SERVER["RIGHT_VIDEO"])->id??""}}"--}}
+    {{--                                    title="YouTube video"--}}
+    {{--                                    allowfullscreen--}}
+    {{--                                ></iframe>--}}
+    {{--                            </div>--}}
+    {{--                            <div class="card-body px-5">--}}
+    {{--                                <div class="h5 text-primary">GIÁO VIÊN PHILIPPINES</div>--}}
+    {{--                                <p class="card-text">Giáo viên Philippines nổi tiếng là những người chuyên dạy tiếng Anh--}}
+    {{--                                    cho--}}
+    {{--                                    trẻ em trên toàn thế giới.</p>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
     <div class="py-2">
         <div class="text-center p-5">
             <h3>HỌC VIÊN CỦA CHÚNG TÔI NÓI GÌ ?</h3>
@@ -241,25 +241,26 @@
             </div>
         </div>
     </div>
-{{--    <div class="py-2 container">--}}
-{{--        <div class="text-center pb-5 text-uppercase">--}}
-{{--            <h3>Chứng chỉ của học viên</h3>--}}
-{{--        </div>--}}
-{{--        <div class="owl-carousel">--}}
-{{--            @php--}}
-{{--                $certificates  = \App\Models\Certificate::limit(10)->get();--}}
-{{--            @endphp--}}
-{{--            @foreach($certificates as $certificate)--}}
-{{--                <div class="bg-image bg-dark rounded">--}}
-{{--                    <img src="{{$certificate->image}}" class="w-100 bgd rounded">--}}
-{{--                    <div class="middle text-white">--}}
-{{--                        <div class="text">{{$certificate->name}}</div>--}}
-{{--                        <div class="text">{{$certificate->certificate_name}}</div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            @endforeach--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    @include("components.index_news",["events"=>$events,'share'=>$share])
+    {{--    <div class="py-2 container">--}}
+    {{--        <div class="text-center pb-5 text-uppercase">--}}
+    {{--            <h3>Chứng chỉ của học viên</h3>--}}
+    {{--        </div>--}}
+    {{--        <div class="owl-carousel">--}}
+    {{--            @php--}}
+    {{--                $certificates  = \App\Models\Certificate::limit(10)->get();--}}
+    {{--            @endphp--}}
+    {{--            @foreach($certificates as $certificate)--}}
+    {{--                <div class="bg-image bg-dark rounded">--}}
+    {{--                    <img src="{{$certificate->image}}" class="w-100 bgd rounded">--}}
+    {{--                    <div class="middle text-white">--}}
+    {{--                        <div class="text">{{$certificate->name}}</div>--}}
+    {{--                        <div class="text">{{$certificate->certificate_name}}</div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            @endforeach--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
     <div class="bg-primary" id="lien-he">
         <div class="container">
             <div class="row my-5 py-5">

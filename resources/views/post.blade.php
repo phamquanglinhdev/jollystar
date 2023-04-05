@@ -1,12 +1,7 @@
 @extends("layouts.client")
 @section("content")
-    <style>
-        .bg-poster {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({{$post->thumbnail}});
-        }
-    </style>
     <div class="bg-poster p-lg-5 py-3 px-1">
-        <div class="text-center text-white text-uppercase ">
+        <div class="text-center ">
             <div class="h1">{{$post->title}}</div>
         </div>
     </div>

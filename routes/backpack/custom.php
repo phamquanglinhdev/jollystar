@@ -58,4 +58,5 @@ Route::group([
 
     Route::crud('branch', 'BranchCrudController');
     Route::crud('review', 'ReviewCrudController');
+    Route::crud('news', 'NewsCrudController');
 }); // this should be the absolute last line of this file

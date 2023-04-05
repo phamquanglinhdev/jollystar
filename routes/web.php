@@ -8,6 +8,7 @@ use App\Http\Controllers\Client\CourseController;
 use App\Http\Controllers\Client\LibraryController;
 use App\Http\Controllers\Client\TeacherController;
 use App\Http\Controllers\Client\PostController;
+use App\Models\News;
 use App\Models\Review;
 use Illuminate\Support\Facades\Route;
 
@@ -36,7 +37,11 @@ Route::get("/github/login", [SocialLoginController::class, "githubLogin"])->name
 Route::get("/github/callback", [SocialLoginController::class, "githubCallback"])->name("github-callback");
 Route::get("/test/download/{url}", [DownloadController::class, "download", "url"])->name("download");
 Route::get('/', function () {
-    return view('welcome', ['reviews' => Review::all()]);
+    return view('welcome',
+        ['reviews' => Review::all(),
+            'share' => News::where("type", 0)->orderBy("updated_at", "DESC")->limit(10)->get(),
+            'events' => News::where("type", 1)->orderBy("updated_at", "DESC")->limit(10)->get()
+        ]);
 });
 Route::get("/danh-sach-khoa-hoc", [CourseController::class, "index"])->name("courses");
 Route::get("/khoa-hoc/{slug?}", [CourseController::class, "show", "slug"])->name("course");

@@ -6,8 +6,6 @@
             @forelse($posts as $post)
                 <div class="col-md-3 col-sm-6 mb-3">
                     <div class="card">
-                        <img src="{{$post->thumbnail}}" class="card-img-top"
-                             alt="Fissure in Sandstone"/>
                         <div class="card-body">
                             <h5 class="card-title">{{\Illuminate\Support\Str::limit($post->title,45)}}</h5>
                             <div class="card-text">Ngày đăng
