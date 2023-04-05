@@ -12,33 +12,34 @@ class CourseController extends Controller
 {
     public function index(Request $request)
     {
-        $categoryId = $request->category ?? null;
-        if ($categoryId == null) {
-            $courses = Course::all();
-        } else {
-            $curentCategory = Category::find($categoryId);
-            $courses = Category::find($categoryId)->Courses()->get();
-        }
-        $tags = Tag::all();
-        $categories = Category::all();
+        $courses = Course::all();
+//        $categoryId = $request->category ?? null;
+//        if ($categoryId == null) {
+//            $courses = Course::all();
+//        } else {
+//            $curentCategory = Category::find($categoryId);
+//            $courses = Category::find($categoryId)->Courses()->get();
+//        }
+//        $tags = Tag::all();
+//        $categories = Category::all();
         $bag = [
-            'tags' => $tags,
+//            'tags' => $tags,
             'courses' => $courses,
-            'curentCategory' => $curentCategory ?? null,
-            'categories' => $categories,
+//            'curentCategory' => $curentCategory ?? null,
+//            'categories' => $categories,
         ];
         return view("courses", $bag);
     }
 
-    public function show($slug = null)
+    public function show($id = null)
     {
-        if ($slug == null) {
+        if ($id == null) {
             return view("errors.404");
         }
-        $course = Course::where("slug", $slug)->firstOrFail();
+        $course = Course::where("id", $id)->firstOrFail();
         $bag = [
-            'categories' => Category::all(),
-            'tags' => Tag::all(),
+//            'categories' => Category::all(),
+//            'tags' => Tag::all(),
             'course' => $course
         ];
         return view("course", $bag);

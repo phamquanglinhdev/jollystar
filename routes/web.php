@@ -44,7 +44,7 @@ Route::get('/', function () {
         ]);
 });
 Route::get("/danh-sach-khoa-hoc", [CourseController::class, "index"])->name("courses");
-Route::get("/khoa-hoc/{slug?}", [CourseController::class, "show", "slug"])->name("course");
+Route::get("/khoa-hoc/{id?}", [CourseController::class, "show", "slug"])->name("course");
 Route::any("/tat-ca-giao-vien", [TeacherController::class, "index"])->name("teachers");
 Route::any("/thu-vien", [LibraryController::class, "index"])->name("library");
 Route::any("/su-kien", [PostController::class, "index"])->name("posts");

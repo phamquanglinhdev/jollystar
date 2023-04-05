@@ -59,9 +59,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{url("/")}}">Trang chủ</a>
                 </li>
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link text-white" href="{{url("/danh-sach-khoa-hoc")}}">Các khóa học</a>--}}
-{{--                </li>--}}
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{url("/danh-sach-khoa-hoc")}}">Các khóa học</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{url("/thu-vien")}}">Thư viện</a>
                 </li>
