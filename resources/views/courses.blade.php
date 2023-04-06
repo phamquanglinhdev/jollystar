@@ -53,7 +53,7 @@
                 @endforeach
             </div>
         @else
-            @include("components.empty")
+{{--            @include("components.empty")--}}
         @endif
     </div>
 @endsection

@@ -134,9 +134,9 @@
                 </div>
             </div>
             <div class="text-center p-3 pb-5">
-                <button class="btn btn-primary">
+                <a href="{{url("danh-sach-khoa-hoc")}}" class="btn btn-primary">
                     Xem chi tiết các khóa học
-                </button>
+                </a>
             </div>
         </div>
     </div>

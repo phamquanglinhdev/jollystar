@@ -59,6 +59,7 @@ class CourseCrudController extends CrudController
                 }
             ]
         );
+        CRUD::column('thumbnail')->label("Ảnh bìa")->type("image");
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -79,6 +80,7 @@ class CourseCrudController extends CrudController
 
         CRUD::field('origin')->type("hidden")->value(backpack_user()->origin);
         CRUD::field('name')->label("Tên khóa học");
+        CRUD::field('thumbnail')->label("Ảnh bìa")->type("image")->crop(true)->aspect_ratio(660 / 440);
         CRUD::field('description')->label("Giới thệu")->type("summernote");
         CRUD::addField([
             'new_item_label' => 'Thêm bài học', // customize the text of the button
@@ -102,22 +104,22 @@ class CourseCrudController extends CrudController
                 ],
             ]
         ]);
-        CRUD::addField([
-            'name' => 'students',
-            'label' => 'Học sinh',
-            'type' => 'relationship',
-            'pivot' => true,
-            'entity' => 'Students',
-            'model' => 'App\Models\Student',
-            'attribute' => 'name',
-            'options' => function ($query) {
-                if (backpack_user()->role == "staff") {
-                    return $query->where("staff_id", backpack_user()->id);
-                } else {
-                    return $query;
-                }
-            },
-        ]);
+//        CRUD::addField([
+//            'name' => 'students',
+//            'label' => 'Học sinh',
+//            'type' => 'relationship',
+//            'pivot' => true,
+//            'entity' => 'Students',
+//            'model' => 'App\Models\Student',
+//            'attribute' => 'name',
+//            'options' => function ($query) {
+//                if (backpack_user()->role == "staff") {
+//                    return $query->where("staff_id", backpack_user()->id);
+//                } else {
+//                    return $query;
+//                }
+//            },
+//        ]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
