@@ -60,12 +60,11 @@ class CheckIfAdmin
         }
 
         if (!$this->checkIfUserIsAdmin(backpack_user())) {
-
             return redirect(backpack_url("/"));
         }
-        if (backpack_user()->role != "super") {
-            Cookie::queue("origin", backpack_user()->origin);
-        }
+//        if (backpack_user()->role == "student") {
+//            Cookie::queue("origin", backpack_user()->origin);
+//        }
         return $next($request);
     }
 }

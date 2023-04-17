@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Operation\InlineCreateOperation;
 use App\Http\Requests\StaffRequest;
 use App\Http\Requests\StudentRequest;
+use App\Models\Branch;
 use App\Models\Grade;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Http\Controllers\Operations\FetchOperation;
@@ -61,6 +62,15 @@ class StudentCrudController extends UserCrudController
     {
         $this->crud->removeButton("show");
         $this->crud->addFilter([
+            'name' => 'origin',
+            'label' => 'Chi nhánh',
+            'type' => 'select2',
+        ], function (){
+            return Branch::all()->pluck("name","id")->toArray();
+        }, function ($value) {
+            $this->crud->query->where("origin", "$value");
+        });
+        $this->crud->addFilter([
             'name' => 'name',
             'label' => 'Tên học viên',
             'type' => 'text',
@@ -93,6 +103,12 @@ class StudentCrudController extends UserCrudController
             });
         });
         $this->crud->disableResponsiveTable();
+        CRUD::addColumn([
+            'name'=>'origin',
+            'label'=>'Chi nhánh',
+            'type'=>'select_from_array',
+            'options'=>Branch::all()->pluck("name","id")->toArray()
+        ]);
         CRUD::addColumn([
             'name' => 'code',
             'type' => 'text',
@@ -163,6 +179,12 @@ class StudentCrudController extends UserCrudController
             ->content('https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/js/intlTelInput-jquery.min.js');
         CRUD::setValidation(StaffRequest::class);
         CRUD::addField([
+            'name'=>'origin',
+            'label'=>'Chi nhánh',
+            'type'=>'select2_from_array',
+            'options'=>Branch::all()->pluck("name","id")->toArray()
+        ]);
+        CRUD::addField([
             'name' => 'code',
             'label' => 'Mã học viên',
         ]);
@@ -229,7 +251,6 @@ class StudentCrudController extends UserCrudController
             'label' => 'Mật khẩu',
             'type' => 'password'
         ]);
-        CRUD::field('origin')->type("hidden")->value(backpack_user()->origin);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

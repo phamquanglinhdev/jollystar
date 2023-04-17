@@ -8,13 +8,13 @@
 @endphp
 @extends(backpack_view('blank'))
 @section('content')
-    @if(\Illuminate\Support\Facades\Cookie::get("origin")!=backpack_user()->origin)
-        @if(backpack_user()->role!="super")
-            <script>
-                window.location.reload()
-            </script>
-        @endif
-    @endif
+{{--    @if(\Illuminate\Support\Facades\Cookie::get("origin")!=backpack_user()->origin)--}}
+{{--        @if(backpack_user()->role!="super")--}}
+{{--            <script>--}}
+{{--                window.location.reload()--}}
+{{--            </script>--}}
+{{--        @endif--}}
+{{--    @endif--}}
     {{--    @include("components.profile",['user'=>backpack_user()])--}}
     <div class="container-fluid">
         <div class="row">

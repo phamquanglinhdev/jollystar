@@ -44,12 +44,12 @@
         <ul class="nav-dropdown-items">
             <li class="nav-item"><a class="nav-link" href="{{ backpack_url('grade') }}"><i
                         class="nav-icon la la-chalkboard"></i> Lớp học</a></li>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="{{ backpack_url('log') }}"><i
-                        class="nav-icon la la-history"></i>
-                    Nhật ký</a>
-            </li>
-        </ul>
+    </li>
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('log') }}"><i
+                class="nav-icon la la-history"></i>
+            Nhật ký</a>
+    </li>
+    </ul>
     </li>
 @endif
 @if(backpack_user()->role=="student")
@@ -95,20 +95,21 @@
 {{--@endif--}}
 
 
-
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('course') }}"><i class="nav-icon la la-list"></i> Khóa
         học</a></li>
 {{--<li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>--}}
-<li class="nav-item nav-dropdown">
-    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-file-archive"></i>Tài liệu</a>
-    <ul class="nav-dropdown-items">
+@if(in_array(backpack_user()->role,["admin","super"]))
+    <li class="nav-item nav-dropdown">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-file-archive"></i>Tài liệu</a>
+        <ul class="nav-dropdown-items">
 
-        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('bag') }}"><i
-                    class="nav-icon la la-list"></i> Danh mục sách</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ backpack_url('book') }}"><i
-                    class="nav-icon la la-book"></i> Sách</a></li>
-    </ul>
-</li>
+            <li class="nav-item"><a class="nav-link" href="{{ backpack_url('bag') }}"><i
+                        class="nav-icon la la-list"></i> Danh mục sách</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ backpack_url('book') }}"><i
+                        class="nav-icon la la-book"></i> Sách</a></li>
+        </ul>
+    </li>
+@endif
 {{--<li class="nav-item nav-dropdown">--}}
 {{--    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon lab la-rocketchat"></i>Trò chuyện</a>--}}
 {{--    <ul class="nav-dropdown-items">--}}
@@ -124,6 +125,10 @@
             việc</a></li>
 @endif
 
+@if(in_array(backpack_user()->role,["admin","super"]))
 
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('review') }}"><i class="nav-icon la la-star"></i>Đánh giá</a></li>
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('news') }}"><i class="nav-icon la la-newspaper"></i> Tin tức</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('review') }}"><i class="nav-icon la la-star"></i>Đánh
+            giá</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('news') }}"><i class="nav-icon la la-newspaper"></i>
+            Tin tức</a></li>
+@endif
