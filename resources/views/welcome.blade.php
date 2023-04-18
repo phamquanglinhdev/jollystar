@@ -52,56 +52,67 @@
                 Jolly Star
             </div>
             <div class="h4">
-                Chuyên đào tạo tiếng Anh mọi levels
+                Chuyên đào tạo tiếng Anh mọi lứa tuổi
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4 col-12">
+            <div class="col-md-3 col-sm-6 col-12">
                 <img src="{{asset("img/intro-1.jpg")}}" class="card-img-top"
                      alt="Sunset Over the Sea"/>
-                <div class="card">
-
+                <div class="">
                     <div class="card-body text-center">
                         <div class="h5 card-title text-center my-3 my-lg-4 text-uppercase">
-                            Nhiều khung giờ học trong ngày
+                            THỜI GIAN HỌC LINH HOẠT
                         </div>
                         <p class="card-text">
-                            Học sinh có thể chọn lựa lớp khung giờ phù hợp một cách linh hoạt, dễ dàng sắp xếp khung
-                            thời gian để học tập.<br><br>
+                            Học sinh có thể dễ dàng lựa chọn, sắp xếp khung thời gian để học tập.
+                            <br><br>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 col-12">
+            <div class="col-md-3 col-sm-6 col-12">
                 <img src="{{asset("img/intro-2.jpg")}}" class="card-img-top"
                      alt="Sunset Over the Sea"/>
-                <div class="card">
-
+                <div class="">
                     <div class="card-body text-center">
                         <div class="h5 card-title text-center my-3 my-lg-4">
-                            LỘ TRÌNH CÁ NHÂN HÓA
+                            DÀNH CHO CÁC BẠN TỪ 4-5 TUỔI
                         </div>
                         <p class="card-text">
-                            Học 1 kèm 1 nên giáo viên có thể hiểu rõ trình độ bạn và dạy bạn theo lộ trình được cá nhân
-                            hóa
-                            phù hợp nhất với bạn – đảm bảo hiệu quả gấp nhiều lần so với đi học tại trung tâm.
+                            Đây là giai đoạn vàng để các con làm quen, tiếp xúc với tiếng Anh. Giúp trẻ làm quen và tiếp
+                            cận một cách tự nhiên nhất giống như ngôn ngữ mẹ đẻ.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 col-12">
+            <div class="col-md-3 col-sm-6 col-12">
                 <img src="{{asset("img/intro-3.jpg")}}" class="card-img-top"
                      alt="Sunset Over the Sea"/>
-                <div class="card">
+                <div class="">
 
                     <div class="card-body text-center">
                         <div class="h5 card-title text-center my-3 my-lg-4">
-                            CHI PHÍ THẤP
+                            DÀNH CHO CÁC BẠN TỪ 6-11 TUỔI
                         </div>
                         <p class="card-text">
-                            Học 1 kèm 1 nhưng chi phí cho mỗi buổi học thấp hơn so với học lớp 10 – 12 người tại trung
-                            tâm.
-                            Đảm bảo bạn có thể học tiếng Anh lâu dài mà không còn lo lắng về vấn đề tài chính.
+                            Với lộ trình học quốc tế hệ CAMBRIGE giúp các bạn nhỏ phát triển đầy đủ các kỹ năng
+                            LISTENING, READING, SPEAKING và WRITING.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+                <img src="{{asset("img/intro-3.jpg")}}" class="card-img-top"
+                     alt="Sunset Over the Sea"/>
+                <div class="">
+                    <div class="card-body text-center">
+                        <div class="h5 card-title text-center my-3 my-lg-4">
+                            DÀNH CHO CÁC BẠN TỪ 12-18 TUỔI
+                        </div>
+                        <p class="card-text">
+                            Bên cạnh việc phát triển các kỹ năng, khóa học hướng tới một lộ trình ngữ pháp chuyên sâu,
+                            bám sát chương trình học của bộ Giáo dục, dành riêng cho các bạn khối THCS, THPT.
                         </p>
                     </div>
                 </div>
@@ -116,22 +127,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-3 col-12 mb-4">
-                    <img src="{{asset("img/pad_1.jpg")}}" class="card-img-top rounded"
+                <div class="col-sm-4 col-12 mb-4">
+                    <img src="{{asset("images/features/1.png")}}" class="card-img-top rounded"
                          alt="Sunset Over the Sea"/>
                 </div>
-                <div class="col-sm-3 col-12 mb-4">
-                    <img src="{{asset("img/pad_2.jpg")}}" class="card-img-top rounded"
+                <div class="col-sm-4 col-12 mb-4">
+                    <img src="{{asset("images/features/2.png")}}" class="card-img-top rounded"
                          alt="Sunset Over the Sea"/>
                 </div>
-                <div class="col-sm-3 col-12 mb-4">
-                    <img src="{{asset("img/pad_3.jpg")}}" class="card-img-top rounded"
+                <div class="col-sm-4 col-12 mb-4">
+                    <img src="{{asset("images/features/3.png")}}" class="card-img-top rounded"
                          alt="Sunset Over the Sea"/>
                 </div>
-                <div class="col-sm-3 col-12 mb-4">
-                    <img src="{{asset("img/pad_4.jpg")}}" class="card-img-top rounded"
-                         alt="Sunset Over the Sea"/>
-                </div>
+{{--                <div class="col-sm-3 col-12 mb-4">--}}
+{{--                    <img src="{{asset("img/pad_4.jpg")}}" class="card-img-top rounded"--}}
+{{--                         alt="Sunset Over the Sea"/>--}}
+{{--                </div>--}}
             </div>
             <div class="text-center p-3 pb-5">
                 <a href="{{url("danh-sach-khoa-hoc")}}" class="btn btn-primary">
@@ -336,9 +347,10 @@
         });
     </script>
     <style>
-        .bg-image{
+        .bg-image {
             cursor: pointer;
         }
+
         .middle {
             width: 100%;
             transition: .5s ease;
@@ -350,13 +362,16 @@
             text-align: center;
 
         }
-        .bgd{
+
+        .bgd {
             transition: .5s ease;
         }
-        .bg-image:hover .bgd{
+
+        .bg-image:hover .bgd {
             opacity: 0.05;
         }
-        .bg-image:hover .middle{
+
+        .bg-image:hover .middle {
             opacity: 1;
         }
     </style>
