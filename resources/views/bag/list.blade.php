@@ -19,7 +19,7 @@
         @foreach($bags->children as $sub)
             <div class="col-md-3 col-sm-6 col-12 mb-3">
                 <div class="border px-3 py-5 rounded text-center  card-overlay h-100"
-                     style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{$sub->thumbnail??"https://png.pngtree.com/thumb_back/fh260/background/20200809/pngtree-doodles-on-green-chalkboard-background-back-to-school-background-image_389839.jpg"}}')
+                     style="background: linear-gradient(rgba(0, 0, 0, {{$sub->opacity}}), rgba(0, 0, 0, {{$sub->opacity}})), url('{{$sub->thumbnail??"https://png.pngtree.com/thumb_back/fh260/background/20200809/pngtree-doodles-on-green-chalkboard-background-back-to-school-background-image_389839.jpg"}}')
                        ;background-size: cover;background-position:center;
 
                     "

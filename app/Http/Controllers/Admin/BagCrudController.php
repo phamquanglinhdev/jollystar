@@ -71,7 +71,8 @@ class BagCrudController extends CrudController
         CRUD::setValidation(BagRequest::class);
 
         CRUD::field('name')->label("Tên menu");
-        CRUD::field('thumbnail')->label("Ảnh bìa")->type("image")->crop(true)->aspect_ratio(383/139);
+        CRUD::field('thumbnail')->label("Ảnh bìa")->type("image")->crop(true)->aspect_ratio(383 / 139);
+        CRUD::field('opacity')->label("Độ mờ (0->1)");
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
