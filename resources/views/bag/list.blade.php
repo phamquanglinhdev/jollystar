@@ -1,6 +1,10 @@
 @extends(backpack_view("blank"))
 @section("content")
-    <div class="h2 mt-5">{{trans("backpack::crud.books")}}</div>
+    <div class="my-3">
+        <span class="h2">{{trans("backpack::crud.books")}}</span>
+        <a href="#" onclick="{history.back()}" class="d-print-none font-sm"><i class="la la-angle-double-left"></i> Quay về  <span>trang trước</span></a>
+    </div>
+    <hr>
     @if(backpack_user()->type<=0)
         <a href="{{backpack_url("book/create")}}" class="btn btn-primary text-white">
             <i class="las la-plus"></i>
@@ -8,50 +12,35 @@
         </a>
     @endif
     <hr>
-    @foreach($menus as $sub)
-        <a class="my-1 btn btn-secondary w-100 text-left" data-toggle="collapse" href="#main-{{$sub->id}}">
-            <i class="las la-list"></i>
-            {{$sub->name}}
-        </a>
-        <div class="collapse show" id="main-{{$sub->id}}">
-            <div class="card card-body p-2">
-                @if($sub->books->count()>0)
-                    <div class="card card-body">
-                        @foreach($sub->books as $book)
-                            <div class="my-1">
-
-                                <img style="width: 30px;" src="{{$book->thumbnail}}">
-                                {{$book->name}}:<a href="{{$book->url}}">Link</a>
-                                @if(in_array(backpack_user()->role,["admin","super"]))
-                                    <a href="{{backpack_url("/book/$book->id/edit")}}">Sửa</a>
-                                @endif
-                            </div>
-                        @endforeach
-                    </div>
-                @endif
-                @foreach($sub->children as $category)
-                    <a class="my-1 btn btn-secondary w-100 text-left" data-toggle="collapse"
-                       href="#sub-{{$category->id}}">
-                        <i class="las la-ellipsis-v"></i>
-                        {{$category->name}}
+    <div class="h3 text-primary font-weight-bold">{{$bags->name}}</div>
+    <hr>
+    <div class="row">
+        @foreach($bags->children as $sub)
+            <div class="col-md-3 col-sm-6 col-12 mb-3">
+                <div class="border px-3 py-5 rounded text-center bg-white">
+                    <a href="{{url("admin/book/".$sub->id)}}" class="nav-link text-dark ">
+                        <span class="h5 font-weight-bold text-center "> {{$sub->name}}</span>
                     </a>
-                    <div class="collapse" id="sub-{{$category->id}}">
-                        <div class="card card-body">
-                            @foreach($category->books as $book)
-                                <div class="my-1">
-                                    <img style="width: 30px;" src="{{$book->thumbnail}}">
-                                    {{$book->name}}:<a href="{{$book->url}}">Link</a>
-                                    @if(in_array(backpack_user()->role,["admin","super"]))
-                                        <a href="{{backpack_url("/book/$book->id/edit")}}">Sửa</a>
-                                    @endif
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                @endforeach
+                </div>
             </div>
-        </div>
+        @endforeach
+    </div>
 
-    @endforeach
+    <div class="row">
+        @foreach($bags->books as $book)
+            <div class="col-md-2 col-sm-6 col-12 mb-3">
+                <div class="shadow-lg">
+                    <a href="{{$book->url}}" target="_blank" class="nav-link p-0 text-dark">
+                        <div class="img-fluid">
+                            <img src="{{$book->thumbnail}}" class="w-100 rounded">
+                        </div>
+                        <div class="p-3 rounded">
+                            <div class="text-center h5">{{$book->name}}</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        @endforeach
+    </div>
 
 @endsection

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BookCrudController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\TaskController;
 use App\Http\Controllers\SuperAdminController;
@@ -44,6 +45,7 @@ Route::group([
     Route::crud('bag', 'BagCrudController');
     Route::get('bag/list', 'BagCrudController@list');
     Route::crud('book', 'BookCrudController');
+    Route::get('/book/{id?}', [BookCrudController::class, "index", "id"]);
     Route::crud('income', 'IncomeCrudController');
     Route::crud('teacher-salary', 'TeacherSalaryCrudController');
     Route::crud('payment', 'PaymentCrudController');

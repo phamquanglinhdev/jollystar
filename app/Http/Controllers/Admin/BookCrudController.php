@@ -6,6 +6,9 @@ use App\Http\Requests\BookRequest;
 use App\Models\Bag;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 /**
  * Class BookCrudController
@@ -95,8 +98,15 @@ class BookCrudController extends CrudController
         $this->setupCreateOperation();
     }
 
-    protected function index()
+    protected function index($id = null): View
     {
-        return view("bag.list", ["menus" => Bag::where("parent_id", null)->get()]);
+        if (!$id) {
+            $bags = new \stdClass();
+            $bags->children = Bag::where("parent_id", null)->get();
+            $bags->name = "Danh mục sách";
+            $bags->books = [];
+            return view("bag.list", ["bags" => $bags]);
+        }
+        return view("bag.list", ["bags" => Bag::where("id", $id)->first()]);
     }
 }
