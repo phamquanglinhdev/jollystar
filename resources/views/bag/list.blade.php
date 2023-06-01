@@ -38,13 +38,17 @@
                             @if(in_array(backpack_user()->role,["admin","staff","super"]))
                                 <div style="position: absolute; z-index: 9999;right: 0;top:1%"
                                      class="d-flex flex-column">
-                                    <a class="p-1 bg-success rounded" href="{{url("admin/book/$book->id/edit")}}">
+                                    <a class="p-1 bg-success " href="{{url($book->url)}}">
+                                        <i class="la la-play la-2x shadow-lg text-white"></i>
+                                    </a>
+                                    <a class="p-1 bg-primary " href="{{url("admin/book/$book->id/edit")}}">
                                         <i class="la la-pencil la-2x shadow-lg text-white"></i>
                                     </a>
+
                                     <form action="{{route("book.destroy",$book->id)}}" method="post">
                                         @method("DELETE")
                                         @csrf
-                                        <button type="submit" class="btn p-1 bg-danger rounded">
+                                        <button type="submit" class="btn p-1 bg-danger rounded-0">
                                         <i class="la la-trash la-2x shadow-lg text-white"></i>
                                         </button>
                                     </form>
