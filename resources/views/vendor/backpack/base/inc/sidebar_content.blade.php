@@ -98,7 +98,7 @@
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('course') }}"><i class="nav-icon la la-list"></i> Khóa
         học</a></li>
 {{--<li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>--}}
-@if(in_array(backpack_user()->role,["admin","super"]))
+@if(in_array(backpack_user()->role,["admin","super","staff"]))
     <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-file-archive"></i>Tài liệu</a>
         <ul class="nav-dropdown-items">
@@ -109,6 +109,9 @@
                         class="nav-icon la la-book"></i> Sách</a></li>
         </ul>
     </li>
+@else
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('book') }}"><i
+                class="nav-icon la la-book"></i> Sách</a></li>
 @endif
 {{--<li class="nav-item nav-dropdown">--}}
 {{--    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon lab la-rocketchat"></i>Trò chuyện</a>--}}
