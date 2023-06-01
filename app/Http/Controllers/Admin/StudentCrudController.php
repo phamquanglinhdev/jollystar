@@ -7,6 +7,7 @@ use App\Http\Requests\StaffRequest;
 use App\Http\Requests\StudentRequest;
 use App\Models\Branch;
 use App\Models\Grade;
+use App\Models\Student;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Http\Controllers\Operations\FetchOperation;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -36,7 +37,7 @@ class StudentCrudController extends UserCrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Student::class);
+        CRUD::setModel(Student::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/student');
         CRUD::setEntityNameStrings('Học viên', 'Học viên');
         if (backpack_user()->role == "staff") {
@@ -231,7 +232,7 @@ class StudentCrudController extends UserCrudController
                 'type' => 'select2',
             ]);
         }
-        if (in_array(backpack_user()->role, ["staff"])) {
+        if (backpack_user()->role == "staff") {
             CRUD::addField([
                 'name' => 'staff_id',
 

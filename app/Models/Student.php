@@ -18,7 +18,7 @@ class Student extends User
     public static function boot()
     {
         parent::boot();
-        static::addGlobalScope(new BusinessScope);
+//        static::addGlobalScope(new BusinessScope);
         static::addGlobalScope(new StudentScope);
     }
 
