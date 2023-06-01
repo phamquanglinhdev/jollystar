@@ -18,8 +18,13 @@
     <div class="row">
         @foreach($bags->children as $sub)
             <div class="col-md-3 col-sm-6 col-12 mb-3">
-                <div class="border px-3 py-5 rounded text-center bg-white h-100">
-                    <a href="{{url("admin/book/".$sub->id)}}" class="nav-link text-dark ">
+                <div class="border px-3 py-5 rounded text-center  card-overlay h-100"
+                     style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{$sub->thumbnail??"https://png.pngtree.com/thumb_back/fh260/background/20200809/pngtree-doodles-on-green-chalkboard-background-back-to-school-background-image_389839.jpg"}}')
+                       ;background-size: cover;background-position:center;
+
+                    "
+                >
+                    <a href="{{url("admin/book/".$sub->id)}}" class="nav-link text-white ">
                         <span class="h5 font-weight-bold text-center "> {{$sub->name}}
 
                         </span>
@@ -35,7 +40,6 @@
                 <div class="shadow-lg h-100">
                     <a href="{{$book->url}}" target="_blank" class="nav-link p-0 text-dark">
                         <div class="img-fluid" style="position: relative">
-
                             <div style="position: absolute; z-index: 9999;right: 0;top:1%"
                                  class="d-flex flex-column">
                                 <a class="p-1 bg-success " href="{{url($book->url)}}">
