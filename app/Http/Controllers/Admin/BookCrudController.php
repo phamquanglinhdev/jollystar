@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\BookRequest;
 use App\Models\Bag;
+use App\Models\Book;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 /**
  * Class BookCrudController
@@ -108,5 +110,11 @@ class BookCrudController extends CrudController
             return view("bag.list", ["bags" => $bags]);
         }
         return view("bag.list", ["bags" => Bag::where("id", $id)->first()]);
+    }
+
+    protected function destroy($id): RedirectResponse
+    {
+        Book::query()->where("id", $id)->delete();
+        return redirect()->back();
     }
 }
